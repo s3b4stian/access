@@ -1,26 +1,129 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<!-- Html head tag-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Access - Berylian Armed Forces</title>
+    <title>Access</title>
     <meta name="description" content="Berylia Armed Forces Guest Registry">
     <meta name="keywords" content="guest, visitors, html">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
-    
-    <!-- CSS
-	============================================ -->
-   
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
+    <link rel="shortcut icon" type="image/svg" href="/assets/icons/police-home.svg" />
 
-    <!-- app module specific js script -->
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    </head><body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="px-3 py-2 bg-primary bg-gradient border-bottom shadow">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                    <span
+                        class="d-flex align-items-center fs-2 my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        BAF - Berylia Armed Forces
+                    </span>
+
+                    <div class="col-12 col-lg-auto my-2 justify-content-center">
+                        <a href="/" class="btn btn-light bg-gradient ms-2" role="button">Home <i
+                                class="bi-house-door ms-2"></i></a>
+                        <a href="/have-appointment" class="btn btn-light bg-gradient ms-2" role="button">Have
+                            Appointment<i class="bi-calendar-date ms-2"></i></a>
+                        <a href="/visitor-status" class="btn btn-light bg-gradient ms-2" role="button">Visitor Status<i
+                                class="bi-person-check ms-2"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary border rounded-3">
+                <img src="/assets/icons/police-home.svg" alt="Policeman" width="128" height="128">
+                <h1 class="display-3 fw-bold text-body-emphasis mt-3 mb-3">Welcome to visitor registration</h1>
+                <p class="col-lg-8 mx-auto fs-4 text-muted fw-light">
+                    Ensuring security, efficiency, and a seamless experience, this is the trusted platform for
+                    streamlined entry
+                    to government and military facilities. Welcome to a new era of visitor management that prioritizes
+                    safety and
+                    enhances the visitor experience.
+                </p>
+                <div class="d-inline-flex gap-2 mt-3">
+                    <a href="/visitor-in"
+                        class="d-inline-flex align-items-center btn btn-danger bg-gradient btn-lg px-4"
+                        role="button">Visitor in<i class="bi-door-closed ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="p-5 border rounded-3">
+                <h1 class="mt-3 mb-5">Frequently asked questions</h1>
+                <p class="lead fs-4">
+                    What is the purpose of a visitor registration site?
+                </p>
+                <p class="fs-5 fw-light">
+                    The visitor registration site serves to streamline and manage the entry of individuals into
+                    Governement and
+                    Military facilities. It enhances security, facilitates efficient check-ins, and provides valuable
+                    insights.
+                </p>
+                <p class="lead fs-4 mt-5">
+                    How does the visitor registration process work?
+                </p>
+                <p class="fs-5 fw-light">
+                    Visitors can pre-register using the platform providing necessary details, such as identification
+                    information
+                    and the purpose of their visit. The system then generates a pass, simplifying the check-in process.
+                    The visitors can check the status of the pass using the <a href="#" class="icon-link">Visitor
+                        Status<svg class="bi" aria-hidden="true">
+                            <use xlink:href="/assets/icons/bootstrap-icons.svg#person-check"></use>
+                        </svg></a> section of this portal.
+                </p>
+                <p class="lead fs-4 mt-5">
+                    Do I have to register every time I have to participate in an event or access the facilities?
+                </p>
+                <p class="fs-5 fw-light">
+                    If this is the first time you need to access the facilities, it is mandatory to register via the
+                    Visitor using
+                    the section <a href="#" class="icon-link link-danger">Visitor In<svg class="bi" aria-hidden="true">
+                            <use xlink:href="/assets/icons/bootstrap-icons.svg#door-closed"></use>
+                        </svg></a> of this portal. If you have previously registered you can directly request an
+                    appointment using
+                    the section
+                    <a href="#" class="icon-link">Have Appointment<svg class="bi" aria-hidden="true">
+                            <use xlink:href="/assets/icons/bootstrap-icons.svg#calendar-date"></use>
+                        </svg></a> of this portal.
+                </p>
+                <p class="lead fs-4 mt-5">
+                    What should I do if my access request is denied?
+                </p>
+                <p class="fs-5 fw-light">
+                    Access request may be denied for various reasons, including security concerns, failure to meet entry
+                    criteria,
+                    incomplete or inaccurate registration,
+                    non-compliance with safety protocols, or specific restrictions imposed by the facility.
+                    If your access is denied, the portal provide information about the reason for denial and any
+                    necessary steps
+                    to address the issue, check the <a href="#" class="icon-link">Visitor Status<svg class="bi"
+                            aria-hidden="true">
+                            <use xlink:href="/assets/icons/bootstrap-icons.svg#person-check"></use>
+                        </svg></a> section of this portal.
+                </p>
+            </div>
+        </div>
+    </main>
 
 </body>
 
