@@ -30,12 +30,9 @@
                     </span>
 
                     <div class="col-12 col-lg-auto my-2 justify-content-center">
-                        <a href="/" class="btn btn-light bg-gradient ms-2" role="button">Home <i
-                                class="bi-house-door ms-2"></i></a>
-                        <a href="/have-appointment" class="btn btn-light bg-gradient ms-2" role="button">Have
-                            Appointment<i class="bi-calendar-date ms-2"></i></a>
-                        <a href="/visitor-status" class="btn btn-light bg-gradient ms-2" role="button">Visitor Status<i
-                                class="bi-person-check ms-2"></i></a>
+                        <a href="/" class="btn btn-light bg-gradient ms-2" role="button">Home <i class="bi-house-door ms-2"></i></a>
+                        <a href="/have-appointment" class="btn btn-light bg-gradient ms-2" role="button">Have Appointment<i class="bi-calendar-date ms-2"></i></a>
+                        <a href="/visitor-status" class="btn btn-light bg-gradient ms-2" role="button">Visitor Status<i class="bi-person-check ms-2"></i></a>
                     </div>
 
                 </div>
@@ -48,17 +45,10 @@
             <div class="p-5 text-center border rounded-3">
 
                 <div class="row mb-3">
-                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 fw-bold">Step 1<br><span class="fs-6">General
-                            information</span></div>
-                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 2<br><span
-                            class="fs-6">Photo</span>
-                    </div>
-                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 3<br><span class="fs-6">Recap
-                            and
-                            send</span></div>
-                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 4<br><span
-                            class="fs-6">Finish</span>
-                    </div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 fw-bold">Step 1<br><span class="fs-6">General information</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 2<br><span class="fs-6">Photo</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 3<br><span class="fs-6">Recap and send</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 4<br><span class="fs-6">Finish</span></div>
                 </div>
 
                 <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="13"
@@ -71,11 +61,11 @@
 
         <div class="container my-5">
             <div class="p-5 border rounded-3">
+                <form class="needs-validation">
+                    <div class="row">
+                        <div class="col-md-6">
 
-                <div class="row">
-                    <div class="col-md-6">
 
-                        <form class="needs-validation">
                             <p class="lead fs-4">
                                 Personal Information
                             </p>
@@ -171,6 +161,21 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <label for="validation-date" class="form-label">Date</label>
+                                    <input type="text" class="form-control" id="validation-date" value="" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validation-entry-time" class="form-label">Entry time</label>
+                                    <input type="text" class="form-control" id="validation-entry-time" value=""
+                                        required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validation-exit-time" class="form-label">Exit time</label>
+                                    <input type="text" class="form-control" id="validation-exit-time" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col-md-12">
                                     <label for="validation-motivation" class="form-label">Access Pourpose</label>
                                     <textarea class="form-control" id="validation-motivation"></textarea>
@@ -178,53 +183,60 @@
 
                             </div>
 
-                            <div class="row mt-5">
+                            <!-- <div class="row mt-5">
                                 <div class="col-12 text-center">
                                     <button class="btn btn-primary" type="submit">Next step</button>
                                 </div>
-                            </div>
-                        </form>
+                            </div> -->
 
-                    </div>
-                    <div class="col-md-6">
 
-                        <p class="lead fs-4">
-                            Badge Preview
-                        </p>
+                        </div>
+                        <div class="col-md-6">
 
-                        <div class="bg-body-tertiary border rounded-3 p-5">
+                            <p class="lead fs-4">
+                                Badge Preview
+                            </p>
 
-                            <div class="row d-flex align-items-center justify-content-center">
-                                <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center"
-                                    style=" width: 256px; height: 256px;">
+                            <div class="bg-body-tertiary border rounded-3 p-5">
 
-                                    <svg class="bi text-body-tertiary" fill="currentColor" opacity=".5">
-                                        <use xlink:href="/assets/icons/bootstrap-icons.svg#person"></use>
-                                    </svg>
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center"
+                                        style=" width: 256px; height: 256px;">
+
+                                        <svg class="bi text-body-tertiary" fill="currentColor" opacity=".5">
+                                            <use xlink:href="/assets/icons/bootstrap-icons.svg#person"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mt-5">
-                                <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
-                                    Visitor Information
-                                </p>
-                            </div>
+                                <div class="row mt-5">
+                                    <p
+                                        class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
+                                        Visitor Information
+                                    </p>
+                                </div>
 
-                            <div class="row mt-3">
-                                <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
-                                    Faciliy
-                                </p>
-                            </div>
+                                <div class="row mt-3">
+                                    <p
+                                        class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
+                                        Faciliy
+                                    </p>
+                                </div>
 
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
-
-                <div class="row"></div>
-
+                    <div class="row mt-5">
+                        <div class="col-12 text-center pt-5">
+                            <button id="step-2" class="btn btn-primary bg-gradient" type="submit">Continue to the next
+                                step<i class="bi-2-circle ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
         </div>
