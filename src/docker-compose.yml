@@ -10,7 +10,7 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
   www:
-    build: './www/'
+    build: './www2/'
     image: access-www:latest
     container_name: access-www
     #depends_on:

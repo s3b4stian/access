@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Access</title>
+    <meta name="description" content="Berylia Armed Forces Guest Registry">
+    <meta name="keywords" content="guest, visitors, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/svg" href="/assets/icons/police-home.svg" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    
+    {{template "header.html"}}
+
+    <main>
+        <div class="container my-5">
+            <div class="p-5 text-center border rounded-3">
+
+                <div class="row mb-3">
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 fw-bold">Step 1<br><span class="fs-6">General information</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 2<br><span class="fs-6">Photo</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 3<br><span class="fs-6">Recap and send</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 4<br><span class="fs-6">Finish</span></div>
+                </div>
+
+                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="13"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 13%"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="p-5 border rounded-3">
+                <form class="needs-validation" id="visitor-in-1-form">
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <p class="lead fs-4">
+                                Personal Information
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="validation-name" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="validation-name" value="" required>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-surname" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="validation-surname" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="validation-address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="validation-address" value="" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-postal-code" class="form-label">Postal code</label>
+                                    <input type="text" class="form-control" id="validation-postal-code" value=""
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-country" class="form-label">Country</label>
+                                    <input type="text" class="form-control" id="validation-country" value="" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-identity" class="form-label">Document</label>
+                                    <select class="form-select" id="validation-identity" required>
+                                        <option value="" selected>Select one</option>
+                                        <option value="Identity card" default>Identity card</option>
+                                        <option value="Passport">Passport</option>
+                                        <option value="Drive license">Drive license</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="validation-identity-number" class="form-label">Document number</label>
+                                    <input type="text" class="form-control" id="validation-validation-identity-number" value="" required>
+                                </div>
+
+                            </div>
+
+                            <p class="lead fs-4 mt-5">
+                                Contacts
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-email" class="form-label">E-mail Address</label>
+                                    <input type="email" class="form-control" id="validation-email" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-email-confirm" class="form-label">Confirm</label>
+                                    <input type="email" class="form-control" id="validation-email-confirm" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-phone" class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" id="validation-phone" value="" required>
+                                </div>
+                            </div>
+
+                            <p class="lead fs-4 mt-5">
+                                Facility
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="validation-facility" class="form-label">Access to</label>
+                                    <select class="form-select" id="validation-facility" required>
+                                        <option value="" selected>Select one</option>
+                                        <option value="1">Facility 1</option>
+                                        <option value="2">Facility 2</option>
+                                        <option value="3">Facility 3</option>
+                                        <option value="4">Facility x</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-entry-time" class="form-label">Start</label>
+                                    <input type="datetime-local" class="form-control" id="validation-entry-time" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-exit-time" class="form-label">End</label>
+                                    <input type="datetime-local" class="form-control" id="validation-exit-time" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="validation-motivation" class="form-label">Access Pourpose</label>
+                                    <textarea class="form-control" id="validation-motivation"></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <p class="lead fs-4">
+                                Badge Preview
+                            </p>
+
+                            <div class="bg-body-tertiary border rounded-3 p-5">
+
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center"
+                                        style=" width: 256px; height: 256px;">
+
+                                        <svg class="bi text-body-tertiary" fill="currentColor" opacity=".5">
+                                            <use xlink:href="/assets/icons/bootstrap-icons.svg#person"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-5">
+                                    <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
+                                        Visitor Information
+                                    </p>
+                                    <p><span class="fs-4" id="badge-name"></span><br /><span class="fs-4"id="badge-surname"></span></p>
+                                    <!-- <p><span id="badge-address"></span><span id="badge-postal-code"></span><span id="badge-country"></span></p> -->
+                                </div>
+
+                                <div class="row mt-3">
+                                    <p
+                                        class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
+                                        Faciliy
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12 text-center pt-5">
+                            <button id="step-2" class="btn btn-primary bg-gradient" type="submit">Continue to the next step<i class="bi-2-circle ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    {{template "footer.html"}}
+
+    <script>
+       /* window.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('visitor-in-1-form').addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                // Should be triggered on form submit
+                console.log('hi');
+            })
+        });*/
+
+
+        let input_name = document.querySelector("#validation-name");
+        let input_surname = document.querySelector("#validation-surname");
+
+        input_name.onkeyup = function(){
+
+            name = input_name.value;
+
+            if (name.length == 0 || name[name.length - 1] == " ") {
+                return;
+            }
+
+            const words = name.split(" ");
+
+
+            document.getElementById('badge-name').innerHTML = words.map((word) => { 
+                return word[0].toUpperCase() + word.substring(1); 
+            }).join(" ");
+        }
+
+        input_surname.onkeyup = function(){
+
+            surname = input_surname.value.toUpperCase();
+            document.getElementById('badge-surname').innerHTML = surname;
+        }
+
+        //let input_address = document.querySelector("#validation-address");
+        //let input_postal_code = document.querySelector("#validation-postal-code");
+        //let input_country = document.querySelector("#validation-country");
+
+        //let select_identity = document.querySelector("#validation-country");
+        //let input_identity_number = document.querySelector("#validation-country");
+
+        let facility = document.querySelector("#validation-facility");
+        let time_entry = document.querySelector("#validation-entry-time");
+        let time_exit = document.querySelector("#validation-exit-time");
+
+        /*input_address.onkeyup = function(){
+            document.getElementById('badge-address').innerHTML = input_address.value;
+        }
+
+        input_postal_code.onkeyup = function(){
+            document.getElementById('badge-postal-code').innerHTML = input_postal_code.value;
+        }
+
+        input_country.onkeyup = function(){
+            document.getElementById('badge-country').innerHTML = input_country.value;
+        }*/
+
+
+        //let input_address = document.querySelector("#validation-address");
+        //let input_postal_code = document.querySelector("#validation-postal-code");
+        //let input_country = document.querySelector("#validation-country");
+
+    </script>
+
+</body>
+
+</html>
