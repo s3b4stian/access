@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Access</title>
+    <meta name="description" content="Berylia Armed Forces Guest Registry">
+    <meta name="keywords" content="guest, visitors, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/svg" href="/assets/icons/police-home.svg" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        #canvas {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    {{template "header.html"}}
+
+    <main>
+        <div class="container my-5">
+            <div class="p-5 text-center border rounded-3">
+
+                <div class="row mb-3">
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 fw-bold">Step 1<br><span class="fs-6">General information</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 2<br><span class="fs-6">Photo</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 3<br><span class="fs-6">Recap and send</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start">Step 4<br><span class="fs-6">Finish</span></div>
+                </div>
+
+                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="13"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 13%"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="p-5 border rounded-3">
+                <form class="needs-validation" id="visitor-in-1-form">
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <p class="lead fs-4">
+                                Personal Information
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="validation-name" class="form-label fw-bold">First name</label>
+                                    <input type="text" class="form-control" id="validation-name" value="" required>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-surname" class="form-label fw-bold">Last name</label>
+                                    <input type="text" class="form-control" id="validation-surname" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-address" class="form-label fw-bold">Address</label>
+                                    <input type="text" class="form-control" id="validation-address" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-postal-code" class="form-label fw-bold">Postal code</label>
+                                    <input type="text" class="form-control" id="validation-postal-code" value="" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-city" class="form-label fw-bold">City</label>
+                                    <input type="text" class="form-control" id="validation-city" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-country" class="form-label fw-bold">Country</label>
+                                    <input type="text" class="form-control" id="validation-country" value="" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-identity" class="form-label fw-bold">Document</label>
+                                    <select class="form-select" id="validation-identity" required>
+                                        <option value="" selected>Select one</option>
+                                        <option value="Identity card" default>Identity card</option>
+                                        <option value="Passport">Passport</option>
+                                        <option value="Drive license">Drive license</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="validation-identity-number" class="form-label fw-bold">Document number</label>
+                                    <input type="text" class="form-control" id="validation-identity-number" value="" required>
+                                </div>
+
+                            </div>
+
+                            <p class="lead fs-4 mt-5">
+                                Contacts
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-email" class="form-label fw-bold">E-mail Address</label>
+                                    <input type="email" class="form-control" id="validation-email" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-email-confirm" class="form-label fw-bold">Confirm</label>
+                                    <input type="email" class="form-control" id="validation-email-confirm" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-phone" class="form-label fw-bold">Phone number</label>
+                                    <input type="tel" class="form-control" id="validation-phone" value="" required>
+                                </div>
+                            </div>
+
+                            <p class="lead fs-4 mt-5">
+                                Facility
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="validation-facility" class="form-label fw-bold">Access to</label>
+                                    <select class="form-select" id="validation-facility" required>
+                                        <option value="" selected>Select one</option>
+                                        <option value="1">Facility 1</option>
+                                        <option value="2">Facility 2</option>
+                                        <option value="3">Facility 3</option>
+                                        <option value="4">Facility x</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="validation-entry-time" class="form-label fw-bold">Start</label>
+                                    <input type="datetime-local" class="form-control" id="validation-entry-time" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validation-exit-time" class="form-label fw-bold">End</label>
+                                    <input type="datetime-local" class="form-control" id="validation-exit-time" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="validation-motivation" class="form-label fw-bold">Access Pourpose</label>
+                                    <textarea class="form-control" id="validation-motivation"></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <p class="lead fs-4">
+                                Badge Preview
+                            </p>
+
+                            <div class="bg-body-tertiary border rounded-3 p-5">
+
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center overflow-hidden"
+                                        style=" width: 256px; height: 256px;">
+                                        <canvas id="canvas" width="360" height="270"></canvas>
+                                        <svg id="canvas-disabled" class="bi text-body-tertiary" fill="currentColor"
+                                            opacity=".5">
+                                            <use xlink:href="/assets/icons/bootstrap-icons.svg#person"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-5">
+                                    <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">
+                                        Visitor Information
+                                    </p>
+                                    <p><span class="fs-4" id="badge-name"></span><br /><span class="fs-4"id="badge-surname"></span></p>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">Facility</p>
+                                    <p><span class="fs-4" id="badge-facility"></span></p>
+                                    <p class="mt-2">
+                                        <span id="badge-entry-time" class="fs-5 text-success"></span><br>
+                                        <span id="badge-exit-time" class="fs-5 text-danger"></span>
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12 text-center pt-5">
+                            <button id="step-abort" class="btn btn-danger bg-gradient">Abort<i class="bi-sign-stop ms-2"></i></button>
+                            <button id="step-2" class="btn btn-primary bg-gradient ms-2" type="submit">Continue to the next step<i class="bi-2-circle ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    {{template "footer.html"}}
+
+    <script>
+
+        function capitalizeFirst(phrase) {
+            const words = phrase.split(" ");
+            return words.map((word) => {
+                return word[0].toUpperCase() + word.substring(1);
+            }).join(" ");
+        }
+
+        function formatValue(el) {
+
+            console.log(el)
+
+            //if (el.id == "validation-name") {
+            //    return capitalizeFirst(el.value)
+            //}
+
+            switch (el.id){
+                case "validation-name":
+                case "validation-address":
+                    return capitalizeFirst(el.value);
+                case "validation-surname":
+                case "validation-city":
+                case "validation-country":
+                    return el.value.toUpperCase();
+                default:
+                    return el.value;
+            }
+
+            return el.value;
+        }
+
+        // form submit event
+        window.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('visitor-in-1-form').addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let postData = {};
+
+                // get all form elements
+                const formElements = Array.from(document.getElementById('visitor-in-1-form').elements);
+                formElements.forEach(element => {
+
+                    if (element.localName == "select") {
+                        postData[element.id] = element.options[element.selectedIndex].text;
+                        postData[element.id + "-id"] = element.selectedIndex;
+                        return;
+                    }
+
+                    if (element.localName == "button") {
+                        return;
+                    }
+                    postData[element.id] = formatValue(element);
+                });
+
+                if (localStorage) {
+                    // get all form elements
+                    formElements.forEach(element => {
+
+                        if (element.localName == "select") {
+                            localStorage.setItem(element.id, element.options[element.selectedIndex].text);
+                            localStorage.setItem(element.id + "-id", element.selectedIndex);
+                            return;
+                        }
+
+                        if (element.localName == "button") {
+                            return;
+                        }
+
+                        localStorage.setItem(element.id, formatValue(element));
+                    });
+                }
+
+                //ajax to backend
+                fetch('/api/v1/step-1-visitor-in', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                }).then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error: ${response.status}`);
+                    }
+
+                    return response.json();
+                }).then((respJson) => {
+                    window.location = window.location.origin + respJson.next;
+                });
+            })
+        });
+
+        // page objects
+        let canvas = document.querySelector("#canvas");
+        let canvas_disabled = document.querySelector("#canvas-disabled");
+
+        let inputName = document.querySelector("#validation-name");
+        let inputSurname = document.querySelector("#validation-surname");
+        let facility = document.querySelector("#validation-facility");
+        let timeEntry = document.querySelector("#validation-entry-time");
+        let timeExit = document.querySelector("#validation-exit-time");
+
+        let button_abort = document.querySelector("#step-abort");
+
+        button_abort.addEventListener('click', function () {
+            
+            //ajax to backend
+            fetch('/api/v1/step-abort-visitor-in', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({action: "abort-request"})
+            }).then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+
+                return response.json();
+            }).then((respJson) => {
+                localStorage.clear();
+                window.location = window.location.origin + respJson.next;
+            });
+        });
+
+        // update functions
+        let updatePhoto = function (data) {
+
+            img = new Image();
+            img.src = data;
+            ctx = canvas.getContext('2d');
+
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+
+            canvas.style.display = "inline";
+            canvas_disabled.style.display = "none";
+        }
+
+        let updateName = function (name) {
+
+            if (name[name.length - 1] == " ") {
+                return;
+            }
+
+            if (name.length == 0) {
+                document.getElementById('badge-name').innerHTML = "";
+                return;
+            }
+
+            document.getElementById('badge-name').innerHTML = capitalizeFirst(name);
+        }
+
+        let updateSurname = function (surname) {
+            document.getElementById('badge-surname').innerHTML = surname;
+        }
+
+        let updateFacility = function (facility) {
+            document.getElementById('badge-facility').innerHTML = facility;
+        }
+
+        let updateTimeEntry = function (time) {
+            document.getElementById('badge-entry-time').innerHTML = "<i class=\"bi-building-up me-2\"></i>" + time;
+        }
+
+        let updateTimeExit = function (time) {
+            document.getElementById('badge-exit-time').innerHTML = "<i class=\"bi-building-down me-2\"></i>" + time;
+        }
+
+        // form population for manual page refresh
+        if (localStorage && localStorage.getItem('validation-name') != "") {
+
+            const formElements = Array.from(document.getElementById('visitor-in-1-form').elements);
+
+            // get all form elements
+            formElements.forEach(element => {
+
+                if (element.localName == "select") {
+                    index = localStorage.getItem(element.id + "-id")
+
+                    element.selectedIndex = index;
+
+                    return;
+                }
+
+                if (element.localName == "button") {
+                    return;
+                }
+
+                value = localStorage.getItem(element.id)
+                element.value = value;
+            });
+
+            if (localStorage.getItem("validation-photo") != null) {
+                updatePhoto(localStorage.getItem('validation-photo'))
+            }
+        }
+
+
+        // badge population on form typing
+        inputName.onkeyup = function () { updateName(inputName.value); };
+        if (inputName.value) {
+            updateName(inputName.value);
+        }
+
+        inputSurname.onkeyup = function () { updateSurname(inputSurname.value.toUpperCase()); };
+        if (inputSurname.value) {
+            updateSurname(inputSurname.value.toUpperCase());
+        }
+
+        facility.onchange = function () { updateFacility(facility.options[facility.selectedIndex].text.toUpperCase()); };
+        if (facility.selectedIndex) {
+            updateFacility(facility.options[facility.selectedIndex].text.toUpperCase());
+        }
+
+        timeEntry.onkeyup = function () { updateTimeEntry(timeEntry.value); };
+        if (timeEntry.value) {
+            updateTimeEntry(timeEntry.value);
+        }
+
+        timeExit.onkeyup = function () { updateTimeExit(timeExit.value); };
+        if (timeExit.value) {
+            updateTimeExit(timeExit.value);
+        }
+
+    </script>
+
+</body>
+
+</html>

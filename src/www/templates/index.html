@@ -24,29 +24,7 @@
 
 <body>
 
-    <header>
-        <div class="px-3 py-2 bg-primary bg-gradient border-bottom shadow">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-
-                    <span
-                        class="d-flex align-items-center fs-2 my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                        BAF - Berylia Armed Forces
-                    </span>
-
-                    <div class="col-12 col-lg-auto my-2 justify-content-center">
-                        <a href="/" class="btn btn-light bg-gradient ms-2" role="button">Home <i
-                                class="bi-house-door ms-2"></i></a>
-                        <a href="/have-appointment" class="btn btn-light bg-gradient ms-2" role="button">Have
-                            Appointment<i class="bi-calendar-date ms-2"></i></a>
-                        <a href="/visitor-status" class="btn btn-light bg-gradient ms-2" role="button">Visitor Status<i
-                                class="bi-person-check ms-2"></i></a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </header>
+    {{template "header.html"}}
 
     <main>
         <div class="container my-5">
@@ -86,7 +64,7 @@
                     Visitors can pre-register using the platform providing necessary details, such as identification
                     information
                     and the purpose of their visit. The system then generates a pass, simplifying the check-in process.
-                    The visitors can check the status of the pass using the <a href="#" class="icon-link">Visitor
+                    The visitors can check the status of the pass using the <a href="/visitor-status" class="icon-link">Visitor
                         Status<svg class="bi" aria-hidden="true">
                             <use xlink:href="/assets/icons/bootstrap-icons.svg#person-check"></use>
                         </svg></a> section of this portal.
@@ -97,12 +75,12 @@
                 <p class="fs-5 fw-light">
                     If this is the first time you need to access the facilities, it is mandatory to register via the
                     Visitor using
-                    the section <a href="#" class="icon-link link-danger">Visitor In<svg class="bi" aria-hidden="true">
+                    the section <a href="/step-1-visitor-in" class="icon-link link-danger">Visitor In<svg class="bi" aria-hidden="true">
                             <use xlink:href="/assets/icons/bootstrap-icons.svg#door-closed"></use>
                         </svg></a> of this portal. If you have previously registered you can directly request an
                     appointment using
                     the section
-                    <a href="#" class="icon-link">Have Appointment<svg class="bi" aria-hidden="true">
+                    <a href="/have-appointment" class="icon-link">Have Appointment<svg class="bi" aria-hidden="true">
                             <use xlink:href="/assets/icons/bootstrap-icons.svg#calendar-date"></use>
                         </svg></a> of this portal.
                 </p>
@@ -116,14 +94,16 @@
                     non-compliance with safety protocols, or specific restrictions imposed by the facility.
                     If your access is denied, the portal provide information about the reason for denial and any
                     necessary steps
-                    to address the issue, check the <a href="#" class="icon-link">Visitor Status<svg class="bi"
-                            aria-hidden="true">
+                    to address the issue, check the <a href="/visitor-status" class="icon-link">Visitor Status
+                        <svg class="bi" aria-hidden="true">
                             <use xlink:href="/assets/icons/bootstrap-icons.svg#person-check"></use>
                         </svg></a> section of this portal.
                 </p>
             </div>
         </div>
     </main>
+
+    {{template "footer.html"}}
 
 </body>
 
