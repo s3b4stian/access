@@ -1,0 +1,353 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Access</title>
+    <meta name="description" content="Berylia Armed Forces Guest Registry">
+    <meta name="keywords" content="guest, visitors, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/svg" href="/assets/icons/police-home.svg" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {{template "header.html"}}
+
+    <main>
+        <div class="container my-5">
+            <div class="p-5 text-center border rounded-3">
+
+                <div class="row mb-3">
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 fw-bold">Step 1<br><span class="fs-6">General information</span></div>
+                    <div class="col text-start p-2 ps-5 mt-0 lead fs-4 border-start ">Step 2<br><span class="fs-6">Finish</span></div>
+                </div>
+
+                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 25%"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="p-5 border rounded-3">
+                <form class="needs-validation" id="make-appointment-in-1-form">
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <p class="lead fs-4">
+                                Visitor Code
+                            </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="appointment-old-code" class="form-label fw-bold">Code</label>
+                                    <input type="text" class="form-control" id="appointment-old-code" value="" required>
+                                </div>
+                            </div>
+
+                            <p class="lead fs-4 mt-5">
+                                Facility
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="appointment-facility" class="form-label fw-bold">Access to</label>
+                                    <select class="form-select" id="appointment-facility" required>
+                                        <option value="" selected>Select one</option>
+                                        <option value="1">Facility 1</option>
+                                        <option value="2">Facility 2</option>
+                                        <option value="3">Facility 3</option>
+                                        <option value="4">Facility x</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="appointment-entry-time" class="form-label fw-bold">Start</label>
+                                    <input type="datetime-local" class="form-control" id="appointment-entry-time" value="" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="appointment-exit-time" class="form-label fw-bold">End</label>
+                                    <input type="datetime-local" class="form-control" id="appointment-exit-time" value="" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label for="appointment-motivation" class="form-label fw-bold">Access Pourpose</label>
+                                    <textarea class="form-control" id="appointment-motivation" required></textarea>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <p class="lead fs-4">
+                               Code Status
+                            </p>
+
+                            <div class="bg-body-tertiary border rounded-3 p-5">
+
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <div class="bg-white border rounded-circle d-flex align-items-center justify-content-center overflow-hidden" style=" width: 256px; height: 256px;">
+                                        <svg id="code-status-icon" class="bi text-body-tertiary" fill="currentColor" opacity=".5">
+                                            <use xlink:href="/assets/icons/bootstrap-icons.svg#hourglass-split"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-5">
+                                    <p class="fs-5 fw-bold bg-light-subtle border bg-gradient text-center rounded-3 p-3">Facility</p>
+                                    <p><span class="fs-4" id="code-facility"></span></p>
+                                    <p class="mt-2">
+                                        <span id="code-entry-time" class="fs-5 text-success"></span><br>
+                                        <span id="code-exit-time" class="fs-5 text-danger"></span>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12 text-center pt-5">
+                            <button id="step-abort" class="btn btn-danger bg-gradient">Abort<i class="bi-sign-stop ms-2"></i></button>
+                            <button id="step-2" class="btn btn-primary bg-gradient ms-2" type="submit" disabled>Send Request<i class="bi-2-circle ms-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        // form submit event
+        window.addEventListener("DOMContentLoaded", function () {
+            let form = document.getElementById('make-appointment-in-1-form');
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let postData = {};
+
+                // get all form elements
+                const formElements = Array.from(form.elements);
+                formElements.forEach(element => {
+
+                    if (element.localName == "select") {
+                        postData[element.id] = element.options[element.selectedIndex].text;
+                        postData[element.id + "-id"] = element.selectedIndex;
+                        return;
+                    }
+
+                    if (element.localName == "button") {
+                        return;
+                    }
+                    postData[element.id] = element.value;
+                });
+
+                console.log(postData);
+
+                /*if (localStorage) {
+                    // get all form elements
+                    formElements.forEach(element => {
+
+                        if (element.localName == "select") {
+                            localStorage.setItem(element.id, element.options[element.selectedIndex].text);
+                            localStorage.setItem(element.id + "-id", element.selectedIndex);
+                            return;
+                        }
+
+                        if (element.localName == "button") {
+                            return;
+                        }
+
+                        localStorage.setItem(element.id, formatValue(element));
+                    });
+                }*/
+
+                //ajax to backend
+                fetch('/api/v1/step-1-make-appointment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                }).then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error: ${response.status}`);
+                    }
+
+                    return response.json();
+                }).then((respJson) => {
+                    localStorage.setItem("request-id", respJson['request-number']);
+                    window.location = window.location.origin + respJson.next;
+                });
+            })
+        });
+
+        let code = document.querySelector("#appointment-old-code");
+
+        let facility = document.querySelector("#appointment-facility");
+        let timeEntry = document.querySelector("#appointment-entry-time");
+        let timeExit = document.querySelector("#appointment-exit-time");
+
+        let button_abort = document.querySelector("#step-abort");
+        let button_next = document.querySelector("#step-2");
+
+
+        button_abort.addEventListener('click', function () {
+            window.location = window.location.origin
+        });
+
+        let updateFacility = function (facility) {
+            document.getElementById('code-facility').innerHTML = facility;
+        }
+
+        let updateTimeEntry = function (time) {
+            document.getElementById('code-entry-time').innerHTML = "<i class=\"bi-building-up me-2\"></i>" + time;
+        }
+
+        let updateTimeExit = function (time) {
+            document.getElementById('code-exit-time').innerHTML = "<i class=\"bi-building-down me-2\"></i>" + time;
+        }
+
+        function isUUID ( uuid ) {
+            let s = "" + uuid;
+
+            s = s.match('^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$');
+            
+            if (s === null) {
+                return false;
+            }
+
+            return true;
+        }
+
+        function resetsvgIcon(){
+            let icon = '<use xlink:href="/assets/icons/bootstrap-icons.svg#hourglass-split"></use>';
+            let color = 'text-body-tertiary';
+            let svgIcon = document.getElementById('code-status-icon');
+
+            svgIcon.innerHTML = icon;
+            svgIcon.setAttribute('opacity', 0.5);
+            svgIcon.classList.add(color);
+            svgIcon.classList.remove('text-danger');
+            svgIcon.classList.remove('text-success');
+
+            button_next.setAttribute("disabled", "disabled");
+        }
+
+        function checkUUID(uuid) {
+
+            fetch('/api/v1/appointment-check-uuid/'+uuid).then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+
+                return response.json();
+            }).then((respJson) => {
+                
+                let icon = '<use xlink:href="/assets/icons/bootstrap-icons.svg#x-circle"></use>';
+                let color = 'text-danger';
+
+                let svgIcon = document.getElementById('code-status-icon');
+                if (respJson.success) {
+
+                    icon = '<use xlink:href="/assets/icons/bootstrap-icons.svg#check-circle"></use>';
+                    color = 'text-success';
+
+                    button_next.removeAttribute("disabled");
+                }
+                
+                svgIcon.innerHTML = icon;
+                svgIcon.removeAttribute('opacity')
+                svgIcon.classList.add(color)
+                svgIcon.classList.remove('text-body-tertiary');
+
+            });
+        }
+
+        let pasting;
+        code.onkeydown = function (evt) {
+            evt = evt || window.event // IE support
+            var c = evt.keyCode
+            var ctrlDown = evt.ctrlKey || evt.metaKey // Mac support
+
+            // Check for Alt+Gr (http://en.wikipedia.org/wiki/AltGr_key)
+            if (ctrlDown && evt.altKey) { pasting = true; }
+
+            // Check for ctrl+c, v and x
+            else if (ctrlDown && c == 67) { pasting = true; } // c
+            else if (ctrlDown && c == 86) { pasting = true; } // v
+            else if (ctrlDown && c == 88) { pasting = true; } // x
+            else {pasting = false;}
+        }
+
+        code.onpaste = function() {
+            let pasted = (event.clipboardData || window.clipboardData).getData("text");
+            if (isUUID(pasted)) {
+                checkUUID(pasted)
+                return;
+            }
+            resetsvgIcon();
+        }
+        code.onkeyup = function() {
+            if (!pasting && isUUID(code.value)) {
+                checkUUID(code.value)
+                return;
+            }
+            if (!pasting) {
+                resetsvgIcon();
+            }
+        }
+        if (code.value) {
+            if (isUUID(code.value)) {
+                checkUUID(code.value)
+            } else {
+                resetsvgIcon();
+            }
+        }
+
+        
+        facility.onchange = function () { updateFacility(facility.options[facility.selectedIndex].text.toUpperCase()); };
+        if (facility.selectedIndex) {
+            updateFacility(facility.options[facility.selectedIndex].text.toUpperCase());
+        }
+
+        timeEntry.onkeyup = function () { updateTimeEntry(timeEntry.value); };
+        if (timeEntry.value) {
+            updateTimeEntry(timeEntry.value);
+        }
+
+        timeExit.onkeyup = function () { updateTimeExit(timeExit.value); };
+        if (timeExit.value) {
+            updateTimeExit(timeExit.value);
+        }
+
+    </script>
+
+    {{template "footer.html"}}
+
+</body>
+
+</html>

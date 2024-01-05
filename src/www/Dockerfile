@@ -4,13 +4,16 @@ WORKDIR /src
 
 COPY go.mod /src
 COPY go.sum /src
-COPY main.go /src
+COPY *.go /src
 
-RUN go build -o /bin/access-www ./main.go
+RUN go build -o /bin/access-www *.go
 
 FROM ubuntu:22.04
 
-RUN mkdir -p /usr/share/access-www/assets && mkdir -p /usr/share/access-www/templates && mkdir -p /usr/share/access-www/ssl
+RUN mkdir -p /usr/share/access-www/assets && \
+    mkdir -p /usr/share/access-www/templates && \ 
+    mkdir -p /usr/share/access-www/ssl && \ 
+    mkdir -p /var/lib/access-www/session
 
 RUN apt-get update && apt install openssl
 RUN openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -subj \
@@ -24,5 +27,5 @@ COPY assets /usr/share/access-www/assets/
 COPY templates /usr/share/access-www/templates/
 COPY --from=build /bin/access-www /bin/access-www
 
-RUN ls /bin
+#RUN ls /bin
 CMD ["/bin/access-www"]
